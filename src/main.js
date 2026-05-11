@@ -45,11 +45,6 @@ async function onSearch(event) {
     return;
   }
 
-  if (query === lastQuery) {
-    isLoading = false;
-    return;
-  }
-
   currentQuery = query;
   currentPage = 1;
   totalHits = 0;
@@ -111,6 +106,8 @@ async function onLoadMore() {
   }
 
   currentPage += 1;
+
+  hideLoadMoreButton();
 
   showLoader();
 
